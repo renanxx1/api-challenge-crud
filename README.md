@@ -19,7 +19,7 @@ Este projeto é uma API de gerenciamento de usuários utilizando **FastAPI** e *
 │   │   ├── user.py           # Lógica de usuários encapsulada
 │   ├── main.py               # Arquivo principal da aplicação
 │── tests/                    # Testes automatizados
-│   ├── test_users.py         # Testes para a API de usuários
+│   ├── test_user.py          # Testes para a API de usuários
 │── .gitignore                # Arquivos ignorados pelo Git
 │── requirements.txt          # Dependências do projeto
 │── README.md                 # Documentação do projeto
@@ -49,7 +49,9 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-A API estará disponível em: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+A API estará disponível em: [http://127.0.0.1:8000/](http://127.0.0.1:8000)
+
+Swagger UI → [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
