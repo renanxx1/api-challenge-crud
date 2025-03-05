@@ -1,9 +1,6 @@
 """
 Módulo de testes para a API de usuários utilizando FastAPI e pytest.
 
-Este arquivo cria um ambiente de testes isolado usando SQLite em memória 
-(`sqlite:///:memory:`) e testa as operações CRUD da API de usuários.
-
 Testes incluídos:
 - Criar um usuário (`POST /users`)
 - Listar todos os usuários (`GET /users`)
@@ -14,21 +11,8 @@ Testes incluídos:
 
 from fastapi.testclient import TestClient
 from app.main import app
-from app.db.session import Base, database
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
-# Configuração do banco de testes em memória
-TEST_DATABASE_URL = "sqlite:///:memory:"
-engine = create_engine(TEST_DATABASE_URL, connect_args={"check_same_thread": False})
-TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Criando as tabelas antes dos testes para evitar erro de tabela não encontrada
-Base.metadata.create_all(bind=engine)
-
-# Criando o cliente de testes para interagir com a API
 client = TestClient(app)
-
 
 def test_create_user():
     """
@@ -85,7 +69,3 @@ def test_delete_user():
     """
     response = client.delete("/users/1")
     assert response.status_code == 200
-
-
-# Limpeza do banco após os testes para evitar interferências entre execuções
-Base.metadata.drop_all(bind=engine)
