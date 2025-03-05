@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+*.env
+
+# Editor files
+.vscode/
+.idea/
+*.iml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# SQLite database
+*.sqlite3
+*.db
+*.sqlite
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# FastAPI auto-generated files
+instance/
+
+# Dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+*.py,cover
+
+# MyPy cache
+.mypy_cache/
+
+# Cache files
+*.cache
+*.pytest_cache/
+
+# Docker
+docker-compose.override.yml
+**/docker/
+
+# Secrets (Caso tenha alguma variável de ambiente extra)
+secrets.env
